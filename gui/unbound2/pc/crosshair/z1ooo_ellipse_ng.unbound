@@ -25,17 +25,13 @@
       )
 	  
 	  (controller $Instance renderer='SpeedEllipseScale'
-	    (args stageWidth ="stageWidth")
 	    (exprs
           (scope
             (bind _focus "(focusBase / _distance) * _bulletTime")
             (bind _width "NG_KNOT_VALUE * (focusBase / _distance) * _bulletTime")
-             (bind _height "NG_KNOT_VALUE * _focus * (heightOffset / _distance)")
+            (bind _height "NG_KNOT_VALUE * _focus * (heightOffset / _distance)")
 	       )
         )
-        (bindcall recreate 
-            (bind trigger "stageWidth")
-        ) 
       )
 	)
 	
