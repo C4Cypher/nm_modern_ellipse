@@ -1,0 +1,174 @@
+(def css $MajorMarkTextStyle()
+  (extends $FontDropShadowFilterBlack)
+  (extends $FontEnableReadability)
+  (extends $FontColorWhite)
+  (textAlign = 'right')
+  (fontFamily = '$WWSDefaultFont')
+  (fontSize = 14)
+)
+
+(def css $MinorMarkTextStyle()
+  (extends $MajorMarkTextStyle)
+  (fontSize = 12)
+)
+
+(def element SimpleMark(mark:str, base:number) layout = true
+  (scope
+    (var _base:number = "base")
+    (var _focus:number = 1.0)
+
+    (var _offset:number = 1.0)
+    (bind _offset "(_base * _focus) | 0")
+  )
+
+  (block
+    (style
+      (position = "absolute")
+      (top = 0)
+      (bind left "-_offset")
+    )
+
+    (element "mark")
+  )
+
+  (block
+    (style
+      (position = "absolute")
+      (top = 0)
+      (bind left "_offset")
+    )
+
+    (element "mark")
+  )
+)
+
+(def element CaptionMark(mark:str, caption:str, base:number) layout = true
+  (scope
+    (var _base:number = "base")
+    (var _focus:number = 1.0)
+
+    (var _offset:number = 1.0)
+    (bind _offset "(_base * _focus) | 0")
+  )
+
+  (block
+    (style
+      (position = "absolute")
+      (top = 0)
+      (bind left "-_offset")
+    )
+
+    (element "mark" label = "caption")
+  )
+
+  (block
+    (style
+      (position = "absolute")
+      (top = 0)
+      (bind left "_offset")
+    )
+
+    (element "mark" label = "caption")
+  )
+)
+
+(def element TopMajor(label:str) layout = true
+  (.graphics
+    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+    (moveTo 0 0)
+    (lineTo 0 -18)
+
+    (lineStyle 1 0xffffff 1 scaleMode='none' caps='none')
+    (moveTo 0 0)
+    (lineTo 0 -18)
+  )
+
+  (tf
+    (class $MajorMarkTextStyle)
+
+    (style
+      (position = "absolute")
+      (left = -12)
+      (top = -43)
+      (width = 24)
+      (textAlign = "center")
+    )
+    (text = "label")
+  )
+)
+
+(def element TopMinor(label:str) layout = true
+  (.graphics
+    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+    (moveTo 0 0)
+    (lineTo 0 -10)
+
+    (lineStyle 1 0xffffff 1 scaleMode='none' caps='none')
+    (moveTo 0 0)
+    (lineTo 0 -10)
+  )
+
+  (tf
+    (class $MinorMarkTextStyle)
+
+    (style
+      (position = "absolute")
+      (left = -12)
+      (top = -32)
+      (width = 24)
+      (textAlign = "center")
+    )
+    (text = "label")
+  )
+)
+
+(def element BottomMajor(label:str) layout = true
+  (.graphics
+    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+    (moveTo 0 0)
+    (lineTo 0 18)
+
+    (lineStyle 1 0xffffff 1 scaleMode='none' caps='none')
+    (moveTo 0 0)
+    (lineTo 0 18)
+  )
+
+  (tf
+    (class $MajorMarkTextStyle)
+
+    (style
+      (position = "absolute")
+      (left = -12)
+      (top = 21)
+      (width = 24)
+      (textAlign = "center")
+    )
+    (text = "label")
+  )
+)
+
+(def element BottomMinor(label:str) layout = true
+  (.graphics
+    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+    (moveTo 0 0)
+    (lineTo 0 10)
+
+    (lineStyle 1 0xffffff 1 scaleMode='none' caps='none')
+    (moveTo 0 0)
+    (lineTo 0 10)
+  )
+
+  (tf
+    (class $MinorMarkTextStyle)
+
+    (style
+      (position = "absolute")
+      (left = -12)
+      (top = 13)
+      (width = 24)
+      (textAlign = "center")
+    )
+    (text = "label")
+  )
+)
+

@@ -1,0 +1,96 @@
+(def element NgZlooEllipseRenderer() layout = true
+  (macro NG_SCOPE)
+
+  (macro NG_TARGET_TRACKER enemies = "enemies" targetId = "currentTarget ? currentTarget.id : 0")
+  
+  (style
+    (bind width "stageWidth")
+    (bind height "stageHeight")
+  )
+  
+  
+  
+  (block
+    (style
+      (position = "absolute")
+      (left = 50%)
+      (top = 50%)
+    )
+	
+
+    (block # Шкалы (Scales)
+      (style
+        (position = "absolute")
+        (left = 0)
+        (top = 0)
+      )
+	  
+	  (controller $Instance renderer='SpeedEllipseScale'
+
+      (controller $Instance renderer='ZlooScale'
+        (args stageWidth ="stageWidth")
+        (exprs
+          (scope
+            (bind _focus "(focusBase / _distance) * _bulletTime")
+          )
+        )
+        (bindcall recreate 
+          (bind trigger "stageWidth")
+        ) 
+      )
+    )
+
+    (block # Горизонтальный статический набор (Horizontal static dialing)
+      (style
+        (position = "absolute")
+        (left = 0)
+        (top = 0)
+      )
+
+      (controller $Instance renderer='NgHorizontal'
+        (args stageWidth ="stageWidth" margin = 50 gap = 0)
+        (bindcall recreate 
+          (bind trigger "stageWidth")
+        ) 
+      )
+    )
+
+    (block # Перекрестие (Crosshair)
+      (style
+        (position = "absolute")
+        (left = 0)
+        (top = -2)
+      )
+
+      (element ZlooCross)
+    )
+  )
+)
+
+(def element ZlooCross() layout = true
+    (.graphics
+      (lineStyle 3 0x000000 0.2 scaleMode='none' caps='none' joints='miter')
+      (moveTo 0 -20)
+      (lineTo 0 20)
+
+      (lineStyle 1 0xffffff 1 scaleMode='none' caps='none' joints='miter')
+      (moveTo 0 -20)
+      (lineTo 0 20)
+    )
+)
+
+(def element ZlooScale(stageWidth:number) layout = true
+  (scope
+    (var _focus:number = 1.0)
+  )
+
+  (element NgScaleMask stageWidth = "stageWidth" margin = 50 gap = 100
+    (isMask = true)
+  )
+
+  (element SpeedMajorScale
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)

@@ -1,0 +1,42 @@
+(def macro NG_TARGET_TRACKER(enemies:expression, targetId:expression)
+  (controller $Repeat renderer='TargetTracker'
+   
+   (bind count "enemies.items.length" 
+     (event "enemies.evAdded")
+     (event "enemies.evRemoved")
+   )
+
+   (exprs
+     (scope
+       (bind _currentTargetId "targetId")
+     )
+   )
+  )
+)
+
+(def element TargetTracker() layout=false
+  (scope
+    (var _currentTargetId:number = 0)
+    
+    (var avatars:gfx = "$datahub.getCollection(CC.avatar)")
+    (var trackedEntity:gfx = "avatars.items[$index]" watch=false)
+
+    (var targetComponent:gfx = "trackedEntity.hasComponent(CC.target) ? trackedEntity.target : null" 
+      (event "trackedEntity.evAdded")
+      (event "trackedEntity.evRemoved")
+    )
+
+    (var isTargetLocked:bool = "((targetComponent ? targetComponent.flags : 0) & (1 << WeaponType.ARTILLERY)) > 0"
+      (event "targetComponent.evFlagsChanged")
+    )
+  )
+
+  (dispatch evTargetChanged args="{entity: isTargetLocked ? trackedEntity : null}" dir="EventDirection.UP"
+    (bind enabled "isTargetLocked || _currentTargetId == trackedEntity.id")
+    (event "targetComponent.evFlagsChanged")
+  )
+    
+  (dispatch evTargetChanged args="{entity: trackedEntity}" dir="EventDirection.UP" on='addedToStage'
+    (bind enabled "isTargetLocked")
+  )
+)

@@ -1,0 +1,58 @@
+(def constant NG_KNOT_VALUE 2.6)
+
+(def macro NG_ELLIPSE_SCOPE()
+  (scope
+    (var _crosshairId:number = 0)
+    (var crosshair:gfx = "$datahub.getPrimaryEntity(CC.crosshairBinocularView, _crosshairId)")
+    (var textureIds:array = "crosshair.crosshairBinocularView.textureIds")
+
+    (event evTargetChanged)
+
+    (var stageComponent:gfx = "$datahub.getSingleEntity(CC.stage).stage")
+    (var cameraComponent:gfx = "$datahub.getSingleEntity(CC.camera).camera")
+    (var aimAssistComponent:gfx = "$datahub.getSingleEntity(CC.crosshair).aimAssist")
+    (var avatars:gfx = "$datahub.getCollection(CC.avatar)")
+    (var enemies:gfx = "avatars.getChildByPath('team.enemy')")
+	
+	#heightOffset - C4Cypher
+	(var screenComponent:gfx = "$datahub.getSingleComponent(CC.screenComponent)")
+    (var heightOffset:number = "screenComponent.heightOffset")
+
+    (var stageHeight:number = "stageComponent.height"
+      (event "stageComponent.evStageSizeChanged")
+    )
+
+    (var stageWidth:number = "stageComponent.width"
+      (event "stageComponent.evStageSizeChanged")
+    )
+    
+    (var fovBase:number = "tan(cameraComponent.frustumAngle * 0.5)"
+      (event "cameraComponent.evFrustumAngleChanged")
+    )
+
+    (var focusBase:number = 0)
+    (bind focusBase "(stageWidth * 0.5) / fovBase")
+
+    (var _bulletTime:number = "aimAssistComponent.collisionTime"
+      (event "evEnterFrame")
+    )
+
+    (var _shootDistance:number = "(aimAssistComponent.distance * 1000) | 0" 
+      (event "evEnterFrame")
+    )
+
+    (var currentTarget:gfx = "$event.entity" watch=false init=false 
+      (event "evTargetChanged")
+    )
+
+    (var distanceComponent:gfx = "(currentTarget && currentTarget.hasComponent(CC.distance)) ? currentTarget.distance : null"
+      (event "evTargetChanged")
+    )
+
+    (var _targetDistance:number = "distanceComponent ? (distanceComponent.distanceToShip * 1000) | 0 : 0"
+      (event "timer.evInfrequent")
+    )
+
+    (var _distance:number = "distanceComponent ? _targetDistance : _shootDistance")
+  )
+)

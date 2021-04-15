@@ -1,0 +1,467 @@
+(def element Time30MajorScale() layout = true
+  (scope
+    (var _base:number = "30 * NG_KNOT_VALUE" watch = false)
+    (var _focus:number = 0)
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '5' base = "5 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '10' base = "10 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '15' base = "15 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '20' base = "20 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '25' base = "25 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '30' base = "30 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)
+
+(def element Time30MinorScale(threshold:number) layout = true
+  (scope
+    (var _threshold:number = "threshold" watch = false)
+    (var _base:number = "30 * NG_KNOT_VALUE" watch = false)
+    (var _focus:number = 0)
+  )
+
+  (bind visible "_focus > _threshold")
+
+  (element CaptionMark mark = 'TopMinor' caption = '1' base = "1 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '2' base = "2 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '3' base = "3 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '4' base = "4 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMinor' caption = '6' base = "6 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )  
+  (element CaptionMark mark = 'TopMinor' caption = '7' base = "7 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '8' base = "8 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '9' base = "9 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMinor' caption = '11' base = "11 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '12' base = "12 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '13' base = "13 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '14' base = "14 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMinor' caption = '16' base = "16 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '17' base = "17 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '18' base = "18 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '19' base = "19 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMinor' caption = '21' base = "21 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '22' base = "22 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '23' base = "23 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '24' base = "24 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMinor' caption = '26' base = "26 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '27' base = "27 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '28' base = "28 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'TopMinor' caption = '29' base = "29 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)
+
+(def element Time20MajorScale() layout = true
+  (scope
+    (var _base:number = "20 * NG_KNOT_VALUE" watch = false)
+    (var _focus:number = 0)
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '5' base = "5 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '10' base = "10 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '15' base = "15 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '20' base = "20 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '25' base = "25 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '30' base = "30 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMajor' caption = '20' base = "40 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMajor' caption = '25' base = "50 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMajor' caption = '30' base = "60 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)
+
+(def element Time20MinorScale(threshold:number) layout = true
+  (scope
+    (var _threshold:number = "threshold" watch = false)
+    (var _base:number = "20 * NG_KNOT_VALUE" watch = false)
+    (var _focus:number = 0)
+  )
+
+  (bind visible "_focus > _threshold")
+
+  (element CaptionMark mark = 'BottomMinor' caption = '1' base = "1 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '2' base = "2 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '3' base = "3 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '4' base = "4 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '6' base = "6 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )  
+  (element CaptionMark mark = 'BottomMinor' caption = '7' base = "7 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '8' base = "8 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '9' base = "9 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '11' base = "11 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '12' base = "12 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '13' base = "13 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '14' base = "14 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '16' base = "16 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '17' base = "17 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '18' base = "18 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '19' base = "19 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '21' base = "21 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '22' base = "22 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '23' base = "23 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '24' base = "24 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '26' base = "26 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '27' base = "27 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '28' base = "28 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '29' base = "29 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '16' base = "32 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '17' base = "34 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '18' base = "36 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '19' base = "38 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '21' base = "42 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '22' base = "44 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '23' base = "46 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '24' base = "48 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'BottomMinor' caption = '26' base = "52 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '27' base = "54 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '28' base = "56 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+  (element CaptionMark mark = 'BottomMinor' caption = '29' base = "58 * _base"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)
+
+(def element SpeedMajorScale() layout = true
+  (scope
+    (var _focus:number = 0)
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '10' base = "10 * NG_KNOT_VALUE"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '20' base = "20 * NG_KNOT_VALUE"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '30' base = "30 * NG_KNOT_VALUE"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+
+  (element CaptionMark mark = 'TopMajor' caption = '40' base = "40 * NG_KNOT_VALUE"
+    (scope
+      (bind _focus "_focus")
+    )
+  )
+)
+

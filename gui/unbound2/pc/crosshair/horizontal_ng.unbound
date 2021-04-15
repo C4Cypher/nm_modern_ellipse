@@ -1,0 +1,48 @@
+(def element NgHorizontal(stageWidth:number, margin:number, gap:number) layout=true
+  (scope
+    (var _margin:number = "margin < 0 ? 0 : margin")
+    (var _gap:number = "gap < 0 ? 0 : gap")
+
+    (var w:number = "stageWidth * 0.5")
+    (var g:number = "_gap * 0.5")
+    (var l:number = "w - _margin")
+  )
+
+  (.graphics
+    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='none' joints='miter')
+    (moveTo "-l" 0)
+    (lineTo "-g" 0)
+    (moveTo "g" 0)
+    (lineTo "l" 0)
+
+    (lineStyle 1 0xffffff 1 scaleMode='none' caps='none' joints='miter')
+    (moveTo "-l" 0)
+    (lineTo "-g" 0)
+    (moveTo "g" 0)
+    (lineTo "l" 0)
+  )
+)
+
+(def element NgScaleMask(stageWidth:number, margin:number, gap:number) layout=true
+  (scope
+    (var _margin:number = "margin < 0 ? 0 : margin")
+    (var _gap:number = "gap < 0 ? 0 : gap")
+
+    (var w:number = "stageWidth * 0.5")
+    (var g:number = "_gap * 0.5")
+    (var l:number = "w - _margin")
+    (var d:number = "l - g")
+  )
+
+  (.graphics
+    (lineStyle 1 0xff0000 1)
+
+    (beginFill 0xff0000 1)
+    (drawRect "-l" -100 "d" 200)
+    (endFill)
+
+    (beginFill 0xff0000 1)
+    (drawRect "g" -100 "d" 200)
+    (endFill)
+  )
+)
