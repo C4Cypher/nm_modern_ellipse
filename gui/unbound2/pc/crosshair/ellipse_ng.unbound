@@ -31,28 +31,28 @@
   (element Ellipse 
     (scope 
       (bind _width "10 * _width")
-	  (bind height  "10 * _height")
+	  (bind height "10 * _height")
 	)
   )
   
   (element Ellipse 
     (scope 
       (bind _width "20 * _width")
-	  (bind height  "20 * _height")
+	  (bind height "20 * _height")
 	)
   )
   
   (element Ellipse 
     (scope 
       (bind _width "30 * _width")
-	  (bind height  "30 * _height")
+	  (bind height "30 * _height")
 	)
   )
   
   (element Ellipse 
     (scope 
       (bind _width "40 * _width")
-	  (bind height  "40 * _height")
+	  (bind height "40 * _height")
 	)
   )
   
