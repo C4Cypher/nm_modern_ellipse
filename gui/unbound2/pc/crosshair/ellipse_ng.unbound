@@ -26,6 +26,10 @@
 	
   )
   
+  (element NgScaleMask stageWidth = "stageWidth" margin = 50 gap = 100
+    (isMask = true)
+  )
+  
   (element Ellipse width = "10 * _width" height = "10 * _height")
   
   (element Ellipse width = "20 * _width" height = "20 * _height")
