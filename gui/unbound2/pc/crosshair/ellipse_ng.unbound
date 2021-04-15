@@ -1,16 +1,24 @@
 # Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
 
 (def element Ellipse(width:number, height:number) layout=true
-  (.graphics
-	(moveTo 0 0)
-    (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
-	(drawEllipse "width * 0.5" "height * 0.5" "width" "height")
-	(lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
-	(drawEllipse "width * 0.5" "height * 0.5" "width" "height")
+
+  (block
+    (style
+      (position = "absolute")
+      (top = "-height * 0.5)
+      (bind left "-height * 0.5")
+    )
+	
+    (.graphics
+      (lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+	  (drawEllipse 0 0 "width" "height")
+	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
+	  (drawEllipse 0 0 "width" "height")
+    )
   )
 )
 
-(def element SpeedEllipseScale() layout = true
+(def element SpeedEllipseScale(stageWidth:number) layout = true
   (scope
     (var _focus:number = 1.0)
 	(var _width:number = 1.0)
