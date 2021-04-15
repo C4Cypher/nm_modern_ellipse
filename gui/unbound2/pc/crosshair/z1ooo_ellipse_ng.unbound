@@ -1,5 +1,5 @@
 (def element NgZlooEllipseRenderer() layout = true
-  (macro NG_SCOPE)
+  (macro NG_ELLIPSE_SCOPE)
 
   (macro NG_TARGET_TRACKER enemies = "enemies" targetId = "currentTarget ? currentTarget.id : 0")
   
@@ -17,6 +17,24 @@
       (top = 50%)
     )
 	
+	(block # Ellipses
+      (style
+        (position = "absolute")
+        (left = 0)
+        (top = 0)
+      )
+	  
+	  (controller $Instance renderer='SpeedEllipseScale'
+	    (exprs
+          (scope
+            (bind _focus "(focusBase / _distance) * _bulletTime")
+			(bind _width "NG_KNOT_VALUE * (focusBase / _distance) * _bulletTime)
+			(bind _height "NG_KNOT_VALUE * _focus * (heightOffset / _distance)")
+          )
+        )
+	  )
+	  
+	)
 
     (block # Шкалы (Scales)
       (style
@@ -25,7 +43,7 @@
         (top = 0)
       )
 	  
-	  (controller $Instance renderer='SpeedEllipseScale'
+	  
 
       (controller $Instance renderer='ZlooScale'
         (args stageWidth ="stageWidth")
