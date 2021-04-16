@@ -8,7 +8,7 @@
 
   (block
     (style
-      (position = "absolute")
+      (position = "flow")
       (bind top = "_height")
       (bind left "-_width")
 	  (bind width = "_width * 2")
