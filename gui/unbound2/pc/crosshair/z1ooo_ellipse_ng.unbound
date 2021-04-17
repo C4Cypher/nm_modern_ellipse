@@ -23,16 +23,20 @@
         (left = 0)
         (top = 0)
       )
-	  
+	
 	  (controller $Instance renderer='SpeedEllipseScale'
 	    (exprs
           (scope
             (bind _width "NG_KNOT_VALUE * (focusBase / _distance) * _bulletTime")
             (bind _height "NG_KNOT_VALUE * (focusBase / _distance) * (heightOffset / _distance)")
+		    (bind _widthOffset "stageWidth / 2")
+		    (bind _heightOffset "stageHeight  / 2")
 	       )
         )
       )
-	)
+    )
+	
+	
 	
 
     (block # Шкалы (Scales)

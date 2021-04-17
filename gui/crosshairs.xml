@@ -92,5 +92,17 @@
 				<texture>../crosshairs/ng-z1ooo.png</texture>
 		  </textures>
 		</crosshair>
+		
+		<crosshair name="Smart Horizon" renderer="BADoBEST_Dyn_V1">
+			<textures>
+				<texture>../crosshairs/BADoBEST_Dyn_V1.png</texture>
+		  </textures>
+		</crosshair>
+
+		<crosshair name="Nomogram Modern" renderer="NgZlooRenderer">
+			<textures>
+				<texture>../crosshairs/ng-z1ooo.png</texture>
+		  </textures>
+		</crosshair>
 </dynamic>
 </crosshairs>

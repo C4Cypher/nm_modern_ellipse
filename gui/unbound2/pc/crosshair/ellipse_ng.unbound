@@ -1,18 +1,18 @@
 # Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
 
-(def element Ellipse(_width:number, _height:number) layout=true
+(def element Ellipse(_width:number, _height:number, _widthOffset:number, _heightOffset:number) layout=true
   (scope
     (var _width:number = "_width")
 	(var _height:number = "_height")
+	(var _widthOffset:number = "_widthOffset")
+	(var _heightOffset:number = "_heightOffset")
   )
 
   (block
     (style
-      (position = "flow")
-      (bind top = "_height")
-      (bind left "-_width")
-	  (bind width = "_width * 2")
-	  (bind height = "_height * 2")
+      (position = "absolute")
+      (bind top "-50")
+      (bind left "-50")
     )
 	
     (.graphics
@@ -28,12 +28,14 @@
   (scope
 	(var _width:number = 1.0)
 	(var _height:number = 1.0)
+	(var _stageWidth:number = 1.0)
+	(var _stageHeight:number = 1.0)
   )
   
-  (element Ellipse _width = "10 * _width" _height =  "10 * _height")
-  (element Ellipse _width = "20 * _width" _height =  "20 * _height")
-  (element Ellipse _width = "30 * _width" _height =  "30 * _height")
-  (element Ellipse _width = "40 * _width" _height =  "40 * _height")
+  (element Ellipse _width = "10 * _width" _height =  "10 * _height" _widthOffset = "_stageWidth / 2" _heightOffset = "_stageHeight / 2")
+  (element Ellipse _width = "20 * _width" _height =  "20 * _height" _widthOffset = "_stageWidth / 2" _heightOffset = "_stageHeight / 2")
+  (element Ellipse _width = "30 * _width" _height =  "30 * _height" _widthOffset = "_stageWidth / 2" _heightOffset = "_stageHeight / 2")
+  (element Ellipse _width = "40 * _width" _height =  "40 * _height" _widthOffset = "_stageWidth / 2" _heightOffset = "_stageHeight / 2")
   
   
   
