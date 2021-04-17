@@ -11,15 +11,15 @@
   (block
     (style
       (position = "absolute")
-      (bind top "-50")
-      (bind left "-50")
+      (bind top 0)
+      (bind left 0)
     )
 	
     (.graphics
       #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
 	  #(drawEllipse 0 0 "_width * 2" "_height * 2")
 	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
-	  (drawEllipse 0 0 100 100)
+	  (drawEllipse -50 -50 100 100)
     )
   )
 )
