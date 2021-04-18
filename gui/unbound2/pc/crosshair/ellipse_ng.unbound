@@ -30,10 +30,12 @@
 	(var _stageHeight:number = 1.0)
   )
   
-  (element Ellipse _width = "10 * _width" _height =  "10 * _height")
-  (element Ellipse _width = "20 * _width" _height =  "20 * _height")
-  (element Ellipse _width = "30 * _width" _height =  "30 * _height")
-  (element Ellipse _width = "40 * _width" _height =  "40 * _height")
+  (.graphics
+      #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
+	  #(drawEllipse 0 0 "_width * 2" "_height * 2")
+	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
+	  (bindcall drawEllipse "-_width" "-_height" "_width * 2" "_height * 2")
+    )
   
   
   
