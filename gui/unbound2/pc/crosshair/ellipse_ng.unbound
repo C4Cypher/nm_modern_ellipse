@@ -9,10 +9,10 @@
   (block
     (style
       (position = "absolute")
-      (bind top "-_h")
+      (bind top "_h")
       (bind left "-_w")
-	  #(bind scaleX "(w * 2) / 100")
-	  #(bind scaleY "(h * 2) / 100")
+	  (bind scaleX "(w * 2) / 100")
+	  (bind scaleY "(h * 2) / 100")
     )
 	
     (.graphics
