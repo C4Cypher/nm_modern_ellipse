@@ -1,11 +1,13 @@
 # Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
 
+(def constant RADIUS 100)
+
 (def element Ellipse(w:number, h:number) layout=true
   (scope
     (var _w:number = "w")
 	(var _h:number = "h")
 	(var _scaleX:number = 1.0)
-	(bind _scaleX "_w / 200")
+	(bind _scaleX "_w / RADIUS")
 	(var _scaleY:number = 1.0)
   )
   
@@ -13,7 +15,7 @@
     (style
       (position = "absolute")
       (bind top "-_h")
-      (bind left "-_w + 100")
+      (bind left "-_w + RADIUS")
 	  (bind scaleX "_scaleX")
 	  (bind scaleY "_scaleY")
     )
@@ -22,7 +24,7 @@
       #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
 	  #(drawEllipse 0 0 "_w * 2" "_h * 2")
 	  (lineStyle 1 0xFF00FF11 1 scaleMode='normal' caps='none')
-	  (drawCircle 0 0 100)
+	  (drawCircle 0 0 "RADIUS")
     )
   )
 )
