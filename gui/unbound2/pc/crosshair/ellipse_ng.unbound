@@ -15,7 +15,7 @@
       #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
 	  #(drawEllipse 0 0 "_w * 2" "_h * 2")
 	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
-	  (bindcall drawEllipse 50 50 100 100)
+	  (drawEllipse 50 50 100 100)
     )
   )
 )
