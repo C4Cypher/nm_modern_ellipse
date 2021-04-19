@@ -15,8 +15,9 @@
     (var enemies:gfx = "avatars.getChildByPath('team.enemy')")
 	
 	#heightOffset - C4Cypher
-	(var screenComponent:gfx = "$datahub.getSingleComponent(CC.screenComponent)")
-    (var heightOffset:number = "screenComponent.heightOffset")
+    (var heightPercent:number = "cameraComponent.heightPercent"
+	  (event "evEnterFrame")
+	)
 
     (var stageHeight:number = "stageComponent.height"
       (event "stageComponent.evStageSizeChanged")
