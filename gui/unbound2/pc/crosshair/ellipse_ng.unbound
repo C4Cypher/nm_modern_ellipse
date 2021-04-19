@@ -1,14 +1,18 @@
 # Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
 
 (def element Ellipse(w:number, h:number) layout=true
+  (scope
+    (var _w:number = "w")
+	(var _h:number = "h")
+  )
   
   (block
     (style
       (position = "absolute")
-      (bind top "-h")
-      (bind left "-w")
-	  (bind scaleX "(w * 2) / 100")
-	  (bind scaleY "(h * 2) / 100")
+      (bind top "-_h")
+      (bind left "-_w")
+	  #(bind scaleX "(w * 2) / 100")
+	  #(bind scaleY "(h * 2) / 100")
     )
 	
     (.graphics
