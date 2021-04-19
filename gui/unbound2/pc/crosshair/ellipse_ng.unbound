@@ -1,11 +1,7 @@
 # Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
 
-(def element Ellipse() layout=true
-  (scope
-    (var w:number = 100)
-	(var h:number = 100)
-  )
-
+(def element Ellipse(w:number, h:number) layout=true
+  
   (block
     (style
       (position = "absolute")
@@ -32,14 +28,11 @@
 	(var _stageHeight:number = 1.0)
   )
   
-  (controller $Instance renderer='Ellipse'
-    (exprs
-	  (scope
-	    (bind w "_width * 10")
-		(bind h "_height * 10")
-	  )
-	)
-  )
+  (element Ellipse w = "_width * 10" h = "_height * 10")
+  (element Ellipse w = "_width * 20" h = "_height * 20")
+  (element Ellipse w = "_width * 30" h = "_height * 30")
+  (element Ellipse w = "_width * 40" h = "_height * 40")
+  
 )
   
   
