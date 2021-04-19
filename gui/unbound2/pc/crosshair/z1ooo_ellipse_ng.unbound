@@ -113,3 +113,12 @@
     )
   )
 )
+
+(def css $TextInfo ()
+	(extends $TextDefaultBold)
+	(textAlign = "left")
+	(textColor = 0xFFFFFF)
+	(fontSize  = 14)
+)
+
+

@@ -2,22 +2,24 @@
 
 (def element Ellipse() layout=true
   (scope
-    (var _w:number = 100)
-	(var _h:number = 100)
+    (var w:number = 100)
+	(var h:number = 100)
   )
 
   (block
     (style
       (position = "absolute")
-      (bind top 0)
-      (bind left 0)
+      (bind top "-h")
+      (bind left "-w")
+	  (bind scaleX "(w * 2) / 100")
+	  (bind scaleY "(h * 2) / 100")
     )
 	
     (.graphics
       #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
 	  #(drawEllipse 0 0 "_w * 2" "_h * 2")
 	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
-	  (bindcall drawEllipse "-_w" "-_h" "_w * 2" "_h * 2")
+	  (bindcall drawEllipse 50 50 100 100)
     )
   )
 )
@@ -33,8 +35,8 @@
   (controller $Instance renderer='Ellipse'
     (exprs
 	  (scope
-	    (bind _w "_width * 10")
-		(bind _h "_height * 10")
+	    (bind w "_width * 10")
+		(bind h "_height * 10")
 	  )
 	)
   )
