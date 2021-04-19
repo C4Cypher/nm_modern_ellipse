@@ -28,7 +28,7 @@
 	    (exprs
           (scope
             (bind _width "NG_KNOT_VALUE * (focusBase / _distance) * _bulletTime")
-            (bind _height "NG_KNOT_VALUE * (focusBase / _distance) * (heightOffset / _distance)")
+            (bind _height "NG_KNOT_VALUE * (focusBase / _distance) * _bulletTime * (heightOffset / _distance)")
 	       )
         )
       )

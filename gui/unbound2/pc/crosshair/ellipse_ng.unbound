@@ -4,22 +4,25 @@
   (scope
     (var _w:number = "w")
 	(var _h:number = "h")
+	(var _scaleX:number = 1.0)
+	(bind _scaleX "_w / 200")
+	(var _scaleY:number = 1.0)
   )
   
   (block
     (style
       (position = "absolute")
-      (bind top "_h")
-      (bind left "-_w")
-	  (bind scaleX "(w * 2) / 100")
-	  (bind scaleY "(h * 2) / 100")
+      (bind top "-_h")
+      (bind left "-_w + 100")
+	  (bind scaleX "_scaleX")
+	  (bind scaleY "_scaleY")
     )
 	
     (.graphics
       #(lineStyle 3 0x000000 0.2 scaleMode='none' caps='round')
 	  #(drawEllipse 0 0 "_w * 2" "_h * 2")
-	  (lineStyle 1 0xFF00FF11 1 scaleMode='none' caps='none')
-	  (drawEllipse 50 50 100 100)
+	  (lineStyle 1 0xFF00FF11 1 scaleMode='normal' caps='none')
+	  (drawCircle 0 0 100)
     )
   )
 )
