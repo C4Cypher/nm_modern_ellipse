@@ -51,6 +51,17 @@
 	(var y2:number = "RADIUS * LONG")
 	(var x3:number = "RADIUS * LONG")
 	(var y3:number = "RADIUS * SHORT")
+  )
+  
+  (block
+    (style
+      (position = "absolute")
+      (bind top 0)
+      (bind left 0)
+	  (bind scaleX "_scaleX")
+	  (bind scaleY "_scaleY")
+    )
+	
 	
 	(.graphics
       #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
