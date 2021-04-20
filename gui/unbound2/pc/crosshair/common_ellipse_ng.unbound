@@ -19,6 +19,7 @@
 	  (event "evEnterFrame")
 	)
 
+
     (var stageHeight:number = "stageComponent.height"
       (event "stageComponent.evStageSizeChanged")
     )
