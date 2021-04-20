@@ -1,11 +1,11 @@
-# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight
+# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight - C4Cypher
 
 (def constant RADIUS 1000)
 (def constant SHORT 0.3826834)
 (def constant MID 0.7071067)
 (def constant LONG 0.9238795)
-(def constant HALF_SCALE 0.6)
-(def constant QUARTER_SCALE 0.8)
+(def constant HALF_SCALE 0.8)
+(def constant QUARTER_SCALE 0.9)
 
 (def element Ellipse(w:number, h:number) layout=true
   (scope
@@ -35,22 +35,68 @@
 	
     (.graphics
       #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
+	  #
 	  #(drawCircle 0 0 "RADIUS")
+	  #
 	  #(moveTo "x1" "y1")
 	  #(lineTo "x1 * HALF_SCALE" "y1 * HALF_SCALE")
 	  #(moveTo "x2" "y2")
 	  #(lineTo "x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
 	  #(moveTo "x3" "y3")
 	  #(lineTo "x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+	  #
+	  #(moveTo "-x1" "y1")
+	  #(lineTo "-x1 * HALF_SCALE" "y1 * HALF_SCALE")
+	  #(moveTo "-x2" "y2")
+	  #(lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  #(moveTo "-x3" "y3")
+	  #(lineTo "-x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+      #
+	  #(moveTo "x1" "-y1")
+	  #(lineTo "x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  #(moveTo "x2" "-y2")
+	  #(lineTo "x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
+	  #(moveTo "x3" "-y3")
+	  #(lineTo "x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
+      #
+	  #(moveTo "-x1" "-y1")
+	  #(lineTo "-x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  #(moveTo "-x2" "-y2")
+	  #(lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  #(moveTo "-x3" "-y3")
+	  #(lineTo -"x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
 	  
 	  (lineStyle 1 0xFF00FF11 0.5 scaleMode = "none" caps='none')
+	  
 	  (drawCircle 0 0 "RADIUS")
+	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 * HALF_SCALE" "y1 * HALF_SCALE")
 	  (moveTo "x2" "y2")
 	  (lineTo "x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
 	  (moveTo "x3" "y3")
 	  (lineTo "x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+	  
+	  (moveTo "-x1" "y1")
+	  (lineTo "-x1 * HALF_SCALE" "y1 * HALF_SCALE")
+	  (moveTo "-x2" "y2")
+	  (lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  (moveTo "-x3" "y3")
+	  (lineTo "-x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+      
+	  (moveTo "x1" "-y1")
+	  (lineTo "x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  (moveTo "x2" "-y2")
+	  (lineTo "x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
+	  (moveTo "x3" "-y3")
+	  (lineTo "x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
+
+	  (moveTo "-x1" "-y1")
+	  (lineTo "-x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  (moveTo "-x2" "-y2")
+	  (lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  (moveTo "-x3" "-y3")
+	  (lineTo -"x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
     )
   )
 )
