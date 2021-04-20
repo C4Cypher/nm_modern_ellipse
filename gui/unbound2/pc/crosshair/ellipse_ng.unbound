@@ -4,8 +4,6 @@
 (def constant SHORT 0.3826834)
 (def constant MID 0.7071067)
 (def constant LONG 0.9238795)
-(def constant HALF_SCALE 0.9)
-(def constant QUARTER_SCALE 0.95)
 
 (def element Ellipse(w:number, h:number) layout=true
   (scope
@@ -15,13 +13,6 @@
 	(bind _scaleX "((_w * 2) / RADIUS) / 2")
 	(var _scaleY:number = 1.0)
 	(bind _scaleY "((_h * 2) / RADIUS) / 2")
-	
-	(var x1:number = "RADIUS * MID")
-	(var y1:number = "RADIUS * MID")
-	(var x2:number = "RADIUS * SHORT")
-	(var y2:number = "RADIUS * LONG")
-	(var x3:number = "RADIUS * LONG")
-	(var y3:number = "RADIUS * SHORT")
   )
   
   (block
@@ -37,71 +28,105 @@
       #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
 	  #
 	  #(drawCircle 0 0 "RADIUS")
-	  #
-	  #(moveTo "x1" "y1")
-	  #(lineTo "x1 * HALF_SCALE" "y1 * HALF_SCALE")
-	  #(moveTo "x2" "y2")
-	  #(lineTo "x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
-	  #(moveTo "x3" "y3")
-	  #(lineTo "x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
-	  #
-	  #(moveTo "-x1" "y1")
-	  #(lineTo "-x1 * HALF_SCALE" "y1 * HALF_SCALE")
-	  #(moveTo "-x2" "y2")
-	  #(lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
-	  #(moveTo "-x3" "y3")
-	  #(lineTo "-x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
-      #
-	  #(moveTo "x1" "-y1")
-	  #(lineTo "x1 * HALF_SCALE" "-y1 * HALF_SCALE")
-	  #(moveTo "x2" "-y2")
-	  #(lineTo "x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
-	  #(moveTo "x3" "-y3")
-	  #(lineTo "x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
-      #
-	  #(moveTo "-x1" "-y1")
-	  #(lineTo "-x1 * HALF_SCALE" "-y1 * HALF_SCALE")
-	  #(moveTo "-x2" "-y2")
-	  #(lineTo "-x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
-	  #(moveTo "-x3" "-y3")
-	  #(lineTo "-x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
 	  
 	  (lineStyle 1 0xFF00FF11 0.5 scaleMode = "none" caps='none')
 	  
 	  (drawCircle 0 0 "RADIUS")
+    )
+  )
+)
+
+(def element Web(w:number, h:number) layout=true
+  (scope
+    (var _w:number = "w")
+	(var _h:number = "h")
+	(var _scaleX:number = 1.0)
+	(bind _scaleX "((_w * 2) / RADIUS) / 2")
+	(var _scaleY:number = 1.0)
+	(bind _scaleY "((_h * 2) / RADIUS) / 2")
+	
+	(var x1:number = "RADIUS * MID")
+	(var y1:number = "RADIUS * MID")
+	(var x2:number = "RADIUS * SHORT")
+	(var y2:number = "RADIUS * LONG")
+	(var x3:number = "RADIUS * LONG")
+	(var y3:number = "RADIUS * SHORT")
+	
+	(.graphics
+      #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
+	  #
+	  #(moveTo "x1" "y1")
+	  #(lineTo "x1 / 3" "y1 / 3")
+	  #(moveTo "x2" "y2")
+	  #(lineTo "x2 / 3" "y2 /3")
+	  #(moveTo "x3" "y3")
+	  #(lineTo "x3 / 3" "y3 /3")
+	  #
+	  #(moveTo -"x1" "y1")
+	  #(lineTo "-x1 / 3" "y1 / 3")
+	  #(moveTo "-x2" "y2")
+	  #(lineTo "-x2 / 3" "y2 /3")
+	  #(moveTo "-x3" "y3")
+	  #(lineTo "-x3 / 3" "y3 /3")
+      #
+	  #(moveTo "x1" "-y1")
+	  #(lineTo "x1 / 3" "-y1 / 3")
+	  #(moveTo "x2" "-y2")
+	  #(lineTo "x2 / 3" "-y2 /3")
+	  #(moveTo "x3" "-y3")
+	  #(lineTo "x3 / 3" "-y3 /3")
+      #
+	  #(moveTo "-x1" "-y1")
+	  #(lineTo "-x1 / 3" "-y1 / 3")
+	  #(moveTo "-x2" "-y2")
+	  #(lineTo "-x2 / 3" "-y2 /3")
+	  #(moveTo "-x3" "-y3")
+	  #(lineTo "-x3 / 3" "-y3 /3")
+	  #
+	  #(moveTo 0 "RADIUS")
+	  #(lineTo 0 "RADIUS / 3")
+	  #(moveTo 0 "-RADIUS")
+	  #(lineTo 0 "-RADIUS / 3")
 	  
 	  (lineStyle 1 0xFF00FF11 0.2 scaleMode = "none" caps='none')
 	  
 	  (moveTo "x1" "y1")
-	  (lineTo "x1 * HALF_SCALE" "y1 * HALF_SCALE")
+	  (lineTo "x1 / 3" "y1 / 3")
 	  (moveTo "x2" "y2")
-	  (lineTo "x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  (lineTo "x2 / 3" "y2 /3")
 	  (moveTo "x3" "y3")
-	  (lineTo "x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+	  (lineTo "x3 / 3" "y3 /3")
 	  
-	  (moveTo "-x1" "y1")
-	  (lineTo "-x1 * HALF_SCALE" "y1 * HALF_SCALE")
+	  (moveTo -"x1" "y1")
+	  (lineTo "-x1 / 3" "y1 / 3")
 	  (moveTo "-x2" "y2")
-	  (lineTo "-x2 * QUARTER_SCALE" "y2 * QUARTER_SCALE")
+	  (lineTo "-x2 / 3" "y2 /3")
 	  (moveTo "-x3" "y3")
-	  (lineTo "-x3 * QUARTER_SCALE" "y3 * QUARTER_SCALE")
+	  (lineTo "-x3 / 3" "y3 /3")
       
 	  (moveTo "x1" "-y1")
-	  (lineTo "x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  (lineTo "x1 / 3" "-y1 / 3")
 	  (moveTo "x2" "-y2")
-	  (lineTo "x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
+	  (lineTo "x2 / 3" "-y2 /3")
 	  (moveTo "x3" "-y3")
-	  (lineTo "x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
+	  (lineTo "x3 / 3" "-y3 /3")
 
 	  (moveTo "-x1" "-y1")
-	  (lineTo "-x1 * HALF_SCALE" "-y1 * HALF_SCALE")
+	  (lineTo "-x1 / 3" "-y1 / 3")
 	  (moveTo "-x2" "-y2")
-	  (lineTo "-x2 * QUARTER_SCALE" "-y2 * QUARTER_SCALE")
+	  (lineTo "-x2 / 3" "-y2 /3")
 	  (moveTo "-x3" "-y3")
-	  (lineTo "-x3 * QUARTER_SCALE" "-y3 * QUARTER_SCALE")
+	  (lineTo "-x3 / 3" "-y3 /3")
+	  
+	  (moveTo 0 "RADIUS")
+	  (lineTo 0 "RADIUS / 3")
+	  (moveTo 0 "-RADIUS")
+	  (lineTo 0 "-RADIUS / 3")
     )
   )
 )
+
+
 
 (def element SpeedEllipseScale() layout = true
   (scope
@@ -115,6 +140,7 @@
   (element Ellipse w = "_width * 20" h = "_height * 20")
   (element Ellipse w = "_width * 30" h = "_height * 30")
   (element Ellipse w = "_width * 40" h = "_height * 40")
+  (element Web w = "_width * 30" h = "_height * 40")
   
 )
   
