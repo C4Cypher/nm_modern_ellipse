@@ -29,7 +29,7 @@
 	  #
 	  #(drawCircle 0 0 "RADIUS")
 	  
-	  (lineStyle 1 0xFF00FF11 0.5 scaleMode = "none" caps='none')
+	  (lineStyle 1 0xFF00FF11 0.3 scaleMode = "none" caps='none')
 	  
 	  (drawCircle 0 0 "RADIUS")
     )
@@ -99,7 +99,7 @@
 	  #(moveTo 0 "-RADIUS")
 	  #(lineTo 0 "-RADIUS / 3")
 	  
-	  (lineStyle 1 0xFF00FF11 0.2 scaleMode = "none" caps='none')
+	  (lineStyle 1 0xFF00FF11 0.1 scaleMode = "none" caps='none')
 	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 / 3" "y1 / 3")
