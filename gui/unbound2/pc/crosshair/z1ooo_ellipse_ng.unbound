@@ -1,3 +1,5 @@
+# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight - C4Cypher
+
 (def element NgZlooEllipseRenderer() layout = true
   (macro NG_ELLIPSE_SCOPE)
 
@@ -17,7 +19,7 @@
       (top = 50%)
     )
 	
-	(block # Ellipses
+	(block # Ellipses - C4Cypher
       (style
         (position = "absolute")
         (left = 0)
