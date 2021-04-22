@@ -1,4 +1,4 @@
-# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the modern sight - C4Cypher
+# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the crosshair that scale by height - C4Cypher
 
 (def constant RADIUS 1000)
 (def constant SHORT 0.3826834)

@@ -1,3 +1,5 @@
+# Modification of the Nonogram Modern crosshair by W03L0BED to add ellipses to the crosshair that scale by height - C4Cypher
+
 (def constant NG_KNOT_VALUE 2.6)
 
 (def macro NG_ELLIPSE_SCOPE()
