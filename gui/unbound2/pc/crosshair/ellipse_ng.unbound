@@ -30,14 +30,14 @@
 	
     (.graphics
 	  
-	  (lineStyle 1 "color" "_alpha" scaleMode = 'none' caps='none')
+	  (lineStyle 1 "_color" "_alpha" scaleMode = 'none' caps='none')
 	  
 	  (drawCircle 0 0 "RADIUS")
     )
   )
 )
 
-(def element Web(w:number, h:number, scale:number, factor:number, alpha:number) layout=true
+(def element Web(w:number, h:number, scale:number, factor:number, alpha:number, color:number) layout=true
   (scope
     (var _w:number = "w * scale")
 	(var _h:number = "h * scale")
@@ -68,7 +68,7 @@
 	
 	
 	(.graphics
-	  (lineStyle 1 "color" "_alpha" scaleMode = 'none' caps='none')
+	  (lineStyle 1 "_color" "_alpha" scaleMode = 'none' caps='none')
 	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 * _f" "y1 * _f")
