@@ -68,8 +68,8 @@
         (top = 0)
       )
 
-      (controller $Instance renderer='NgHorizontal'
-        (args stageWidth ="stageWidth" margin = 50 gap = 0)
+      (controller $Instance renderer = 'NgHorizontal'
+        (args stageWidth = "stageWidth" margin = 50 gap = 0)
         (bindcall recreate 
           (bind trigger "stageWidth")
         ) 
