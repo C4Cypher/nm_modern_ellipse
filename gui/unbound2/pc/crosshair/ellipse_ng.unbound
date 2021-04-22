@@ -5,10 +5,14 @@
 (def constant MID 0.7071067)
 (def constant LONG 0.9238795)
 
-(def element Ellipse(w:number, h:number, scale:number) layout=true
+
+
+(def element Ellipse(w:number, h:number, scale:number, alpha:number, color:number) layout=true
   (scope
     (var _w:number = "w * scale")
 	(var _h:number = "h * scale")
+	(var _alpha = "alpha")
+	(var _color = "color")
 	(var _scaleX:number = 1.0)
 	(bind _scaleX "((_w * 2) / RADIUS) / 2")
 	(var _scaleY:number = 1.0)
@@ -25,22 +29,21 @@
     )
 	
     (.graphics
-      #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
-	  #
-	  #(drawCircle 0 0 "RADIUS")
 	  
-	  (lineStyle 1 0xFF00FF11 0.3 scaleMode = "none" caps='none')
+	  (lineStyle 1 "color" "_alpha" scaleMode = 'none' caps='none')
 	  
 	  (drawCircle 0 0 "RADIUS")
     )
   )
 )
 
-(def element Web(w:number, h:number, scale:number, factor:number) layout=true
+(def element Web(w:number, h:number, scale:number, factor:number, alpha:number) layout=true
   (scope
     (var _w:number = "w * scale")
 	(var _h:number = "h * scale")
 	(var _f:number = "factor")
+	(var _alpha = "alpha")
+	(var _color = "color")
 	(var _scaleX:number = 1.0)
 	(bind _scaleX "((_w * 2) / RADIUS) / 2")
 	(var _scaleY:number = 1.0)
@@ -65,42 +68,7 @@
 	
 	
 	(.graphics
-      #(lineStyle 3 0x000000 0.2 scaleMode = "none" caps='round')
-	  #
-	  #(moveTo "x1" "y1")
-	  #(lineTo "x1 * _f" "y1 * _f")
-	  #(moveTo "x2" "y2")
-	  #(lineTo "x2 * _f" "y2 * _f")
-	  #(moveTo "x3" "y3")
-	  #(lineTo "x3 * _f" "y3 * _f")
-	  #
-	  #(moveTo -"x1" "y1")
-	  #(lineTo "-x1 * _f" "y1 * _f")
-	  #(moveTo "-x2" "y2")
-	  #(lineTo "-x2 * _f" "y2 * _f")
-	  #(moveTo "-x3" "y3")
-	  #(lineTo "-x3 * _f" "y3 * _f")
-      #
-	  #(moveTo "x1" "-y1")
-	  #(lineTo "x1 * _f" "-y1 * _f")
-	  #(moveTo "x2" "-y2")
-	  #(lineTo "x2 * _f" "-y2 * _f")
-	  #(moveTo "x3" "-y3")
-	  #(lineTo "x3 * _f" "-y3 * _f")
-      #
-	  #(moveTo "-x1" "-y1")
-	  #(lineTo "-x1 * _f" "-y1 * _f")
-	  #(moveTo "-x2" "-y2")
-	  #(lineTo "-x2 * _f" "-y2 * _f")
-	  #(moveTo "-x3" "-y3")
-	  #(lineTo "-x3 * _f" "-y3 * _f")
-	  #
-	  #(moveTo 0 "RADIUS")
-	  #(lineTo 0 "RADIUS * _f")
-	  #(moveTo 0 "-RADIUS")
-	  #(lineTo 0 "-RADIUS * _f")
-	  
-	  (lineStyle 1 0xFF00FF11 0.1 scaleMode = "none" caps='none')
+	  (lineStyle 1 "color" "_alpha" scaleMode = 'none' caps='none')
 	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 * _f" "y1 * _f")
@@ -148,11 +116,11 @@
 	(var _stageHeight:number = 1.0)
   )
   
-  #(element Ellipse w = "_width" h = "_height" scale = 10)
-  (element Ellipse w = "_width" h = "_height" scale = 20)
-  (element Ellipse w = "_width" h = "_height" scale = 30)
-  #(element Ellipse w = "_width" h = "_height" scale = 40)
-  (element Web w = "_width" h = "_height" scale = 30 factor = "2 / 3")
+  (element Ellipse w = "_width" h = "_height" scale = 10 alpha = 0.2 color = 0xFF00FF11)
+  (element Ellipse w = "_width" h = "_height" scale = 20 alpha = 0.5 color = 0xFF00FF11)
+  (element Ellipse w = "_width" h = "_height" scale = 30 alpha = 0.5 color = 0xFF00FF11)
+  (element Ellipse w = "_width" h = "_height" scale = 40 alpha = 0.2 color = 0xFF00FF11)
+  (element Web w = "_width" h = "_height" scale = 30 factor = "2 / 3" alpha = 0.4 color = 0xFF00FF11)
   
 )
   
