@@ -14,5 +14,5 @@ To install this modification, copy the gui folder to your res_mods folder, then
 		  </textures>
 		</crosshair> 
 
- - C4Cypher
+ \- C4Cypher
  
