@@ -7,7 +7,7 @@
 
 
 
-(def element Ellipse(w:number, h:number, scale:number, color:uint) layout=true
+(def element Ellipse(w:number, h:number, scale:number) layout=true
   (scope
     (var _w:number = "w")
 	(var _h:number = "h")
@@ -17,7 +17,6 @@
 	(bind _scaleX "((_w * _scale * 2) / RADIUS) / 2")
 	(var _scaleY:number = 1.0)
 	(bind _scaleY "((_h * * _scale * 2) / RADIUS) / 2")
-	(var _color:uint = "color")
   )
   
   (block
@@ -31,14 +30,14 @@
 	
     (.graphics
 	  
-	  (lineStyle 1 "_color" 0.4 scaleMode = 'none' caps='none')
+	  (lineStyle 1 0xFF00FF11 0.4 scaleMode = 'none' caps='none')
 	  
 	  (drawCircle 0 0 "RADIUS")
     )
   )
 )
 
-(def element Web(w:number, h:number, scale:number, factor:number, color:uint) layout=true
+(def element Web(w:number, h:number, scale:number, factor:number) layout=true
   (scope
     (var _w:number = "w")
 	(var _h:number = "h")
@@ -48,7 +47,6 @@
 	(bind _scaleX "((_w * _scale * 2) / RADIUS) / 2")
 	(var _scaleY:number = 1.0)
 	(bind _scaleY "((_h * * _scale * 2) / RADIUS) / 2")
-	(var _color:uint = "color")
 	
 	(var x1:number = "RADIUS * MID")
 	(var y1:number = "RADIUS * MID")
@@ -69,7 +67,7 @@
 	
 	
 	(.graphics
-	  (lineStyle 1 "_color" 0.3 scaleMode = 'none' caps='none')
+	  (lineStyle 1 0xFF00FF11 0.3 scaleMode = 'none' caps='none')
 	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 * _f" "y1 * _f")
@@ -117,11 +115,11 @@
 	(var _stageHeight:number = 1.0)
   )
   
-  (element Ellipse w = "_width" h = "_height" scale = 10 color = 0x00008Bil )
-  (element Ellipse w = "_width" h = "_height" scale = 20 color = 0xFF00FF11 )
-  (element Ellipse w = "_width" h = "_height" scale = 30 color = 0xFF00FF11 )
-  (element Ellipse w = "_width" h = "_height" scale = 40 color = 0x00008Bil )
-  (element Web w = "_width" h = "_height" scale = 30 factor = "2 / 3" color = 0xFF00FF11 )
+  #(element Ellipse w = "_width" h = "_height" scale = 10 )
+  (element Ellipse w = "_width" h = "_height" scale = 20 )
+  (element Ellipse w = "_width" h = "_height" scale = 30 )
+  #(element Ellipse w = "_width" h = "_height" scale = 40 )
+  (element Web w = "_width" h = "_height" scale = 30 factor = "2 / 3" )
   
 )
   
