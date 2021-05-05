@@ -67,7 +67,7 @@
 	
 	
 	(.graphics
-	  (lineStyle 1 0xFF00FF11 0.3 scaleMode = 'none' caps='none')
+	  (lineStyle 1 0xFF00FF11 0.2 scaleMode = 'none' caps='none')
 	  
 	  (moveTo "x1" "y1")
 	  (lineTo "x1 * _f" "y1 * _f")
@@ -119,17 +119,7 @@
   (element Ellipse w = "_width" h = "_height" scale = 20 )
   (element Ellipse w = "_width" h = "_height" scale = 30 )
   (element Ellipse w = "_width" h = "_height" scale = 40 )
-  (element Web w = "_width" h = "_height" scale = 30 factor = "2 / 3" )
+  (element Web w = "_width" h = "_height" scale = 40 factor = "3 / 4" )
   
 )
-  
-  
-  
-  
-  
-  
-  
-)
-
-
 	
