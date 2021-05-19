@@ -104,5 +104,11 @@
 				<texture>../crosshairs/ng-z1ooo.png</texture>
 		  </textures>
 		</crosshair>
+		
+		<crosshair name="Nomogram Classic" renderer="NgClassicRenderer">
+			<textures>
+				<texture>../crosshairs/ng-cross.png</texture>
+		  </textures>
+		</crosshair>
 </dynamic>
 </crosshairs>
